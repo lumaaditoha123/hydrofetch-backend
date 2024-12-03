@@ -1,0 +1,17 @@
+service: urbanvogue
+frameworkVersion: "4"
+
+provider:
+  name: aws
+  runtime: nodejs18.x
+  region: us-west-2
+
+functions:
+  api:
+    handler: src/index.handler
+    name: urbanvogue
+    events:
+      - httpApi: "*"
+
+plugins:
+  - serverless-offline
